@@ -1,0 +1,17 @@
+name: Push Notification
+on: [push]
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send email notification
+        uses: dawidd6/action-send-main@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          from: ${{secrets.EMAIl}}
+          to: ${{secrets.EMAIl}}
+          username: ${{secrets.MAIL_USERNAME}}
+          password: ${{secrets.MAIL_USERNAME}}
+          subject: "Push Notification"
+          body: "Push Notification"
